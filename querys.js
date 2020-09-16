@@ -1,7 +1,7 @@
 // Engenharia de Software - Praça da Liberdade
 // Nome: Werik Gonçalves de Paula
 const fetch = require("node-fetch");
-const GITHUBTOKEN = '91c9129320932b1b4f1bbbfd9cb974f7a02a971d'
+const GITHUBTOKEN = 'b3f15c1430f28eb534b36a9d42d8ed0acd7e88ed'
 
 // RQ 01. Sistemas populares são maduros/antigos?
 // Métrica: idade do repositório (calculado a partir da data de sua criação)
@@ -183,7 +183,7 @@ exports.question4 = function (next){
 					nodes{
 						... on Repository {
 							nameWithOwner
-							updatedAt
+							pushedAt
 						}
 					}
 				}
@@ -197,7 +197,7 @@ exports.question4 = function (next){
 					nodes{
 						... on Repository {
 							nameWithOwner
-							updatedAt
+							pushedAt
 						}
 					}
 				}
