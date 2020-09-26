@@ -21,6 +21,7 @@ app.get("/question1", async (req, res) => {
 	fs.writeFile('./csv/question1.csv', fileCsv, function (err) {
 	  if (err) return console.log(err);
 	  console.log('CSV salvo com sucesso');
+	  res.send('CSV salvo com sucesso')
 	})
 });
 
@@ -43,6 +44,7 @@ app.get("/question2", async (req, res) => {
 	fs.writeFile('./csv/question2.csv', fileCsv, function (err) {
 	  if (err) return console.log(err);
 	  console.log('CSV salvo com sucesso');
+	  res.send('CSV salvo com sucesso')
 	})
 });
 
@@ -61,6 +63,7 @@ app.get("/question3", async (req, res) => {
 	fs.writeFile('./csv/question3.csv', fileCsv, function (err) {
 	  if (err) return console.log(err);
 	  console.log('CSV salvo com sucesso');
+	  res.send('CSV salvo com sucesso')
 	})
 });
 
@@ -79,6 +82,7 @@ app.get("/question4", async (req, res) => {
 	fs.writeFile('./csv/question4.csv', fileCsv, function (err) {
 	  if (err) return console.log(err);
 	  console.log('CSV salvo com sucesso');
+	  res.send('CSV salvo com sucesso')
 	})
 });
 
@@ -97,6 +101,7 @@ app.get("/question5", async (req, res) => {
 	fs.writeFile('./csv/question5.csv', fileCsv, function (err) {
 	  if (err) return console.log(err);
 	  console.log('CSV salvo com sucesso');
+	  res.send('CSV salvo com sucesso')
 	})
 });
 
@@ -115,10 +120,24 @@ app.get("/question6", async (req, res) => {
 	fs.writeFile('./csv/question6.csv', fileCsv, function (err) {
 	  if (err) return console.log(err);
 	  console.log('CSV salvo com sucesso');
+	  res.send('CSV salvo com sucesso')
+	})
+});
+
+app.get("/tis", async (req, res) => {
+
+	const response = await querys.tis()
+	const parser = new Parser(response);
+	const csv = parser.parse(response.data.search.nodes);
+
+	fs.writeFile('./csv/tis.csv', csv, function (err) {
+	  if (err) return console.log(err);
+	  console.log('CSV salvo com sucesso');
+	  res.send('CSV salvo com sucesso')
 	})
 });
 
 
 app.listen(3001);
 
-console.log('Running a API server at http://localhost:3001/questions');
+console.log('Running a API server at http://localhost:3001/');
